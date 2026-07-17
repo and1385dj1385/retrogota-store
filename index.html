@@ -828,7 +828,7 @@ body{background:var(--black);color:var(--ivory);font-family:'Inter',sans-serif;o
 .signup-trigger:active{transform:scale(.96);}
 .signup-trigger.hide{opacity:0;pointer-events:none;transform:translateY(20px);}
 .trigger-icon{font-size:13px;}
-.trigger-pct{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:700;color:var(--black);line-height:1;}
+.trigger-pct{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:700;color:var(--black);line-height:1;display:none;}
 @keyframes triggerFloat{
   0%,100%{transform:translateY(0)}
   50%{transform:translateY(-5px)}
@@ -1305,16 +1305,16 @@ body{background:var(--black);color:var(--ivory);font-family:'Inter',sans-serif;o
       <div id="signupFormState">
         <div class="signup-badge">
           <span class="signup-badge-dot"></span>
-          Inauguración exclusiva
+          Comunidad RETROGOTA
         </div>
-        <h2>Únete y recibe<br><em>10% de descuento</em></h2>
-        <p>Sé parte de la comunidad RETROGOTA desde el primer día. Regístrate y accede a descuentos exclusivos, preventas y drops antes que nadie.</p>
+        <h2>Sé el primero en<br><em>enterarte de todo</em></h2>
+        <p>Únete a la comunidad RETROGOTA. Suscríbete y recibe antes que nadie novedades, drops exclusivos, descuentos y eventos de la marca.</p>
 
         <div class="discount-pill">
-          <div class="discount-pct">10%</div>
+          <div class="discount-pct">✦</div>
           <div class="discount-text">
-            <h4>Descuento de inauguración</h4>
-            <p>Válido en tu primera compra · Tiempo limitado</p>
+            <h4>Acceso exclusivo para suscriptores</h4>
+            <p>Drops · Descuentos · Novedades · Eventos</p>
           </div>
         </div>
 
@@ -1361,26 +1361,28 @@ body{background:var(--black);color:var(--ivory);font-family:'Inter',sans-serif;o
           </div>
 
           <button class="signup-submit ripple-host" id="signupSubmitBtn" onclick="submitSignup()" onmousedown="createRipple(event,this)">
-            <span class="signup-submit-text">Reclamar mi 10% →</span>
+            <span class="signup-submit-text">Suscribirme →</span>
             <div class="signup-spinner"></div>
           </button>
           <p class="signup-privacy">🔒 Sin spam. Tus datos son privados y nunca se comparten con terceros.</p>
         </div>
         <div class="signup-skip">
-          <button onclick="closeSignup()" onmousedown="createRipple(event,this)">No gracias, seguir sin descuento</button>
+          <button onclick="closeSignup()" onmousedown="createRipple(event,this)">No gracias, seguir sin suscribirme</button>
         </div>
       </div>
 
       <!-- SUCCESS STATE -->
       <div class="signup-success" id="signupSuccess">
         <div class="signup-success-icon">✦</div>
-        <h3>¡Bienvenido a<br><em>RETROGOTA!</em></h3>
-        <p>Tu registro fue exitoso. Tu código de descuento:</p>
-        <div class="signup-coupon" id="signupCoupon" onclick="copyCoupon()" title="Toca para copiar">
-          RETRO10
+        <h3>¡Ya eres parte de<br><em>RETROGOTA!</em></h3>
+        <p>Tu registro fue exitoso. Pronto recibirás novedades, drops y descuentos exclusivos.</p>
+        <div style="background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.2);border-radius:12px;padding:16px 20px;margin:16px 0;text-align:left;">
+          <p style="font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.2em;color:var(--gold);text-transform:uppercase;margin-bottom:10px;">Lo que recibirás</p>
+          <p style="font-size:13px;color:var(--grey);margin-bottom:6px;">🔥 Drops exclusivos antes que nadie</p>
+          <p style="font-size:13px;color:var(--grey);margin-bottom:6px;">🏷️ Descuentos y ofertas solo para suscriptores</p>
+          <p style="font-size:13px;color:var(--grey);margin-bottom:6px;">📦 Novedades y nuevas llegadas</p>
+          <p style="font-size:13px;color:var(--grey);">🎉 Invitaciones a eventos y pop-ups</p>
         </div>
-        <p class="signup-coupon-hint">↑ Toca para copiar · Válido en tu primera compra</p>
-        <p style="margin-top:12px;">Te enviaremos las mejores ofertas, drops y eventos directamente a tu correo y WhatsApp.</p>
         <button class="signup-close-btn ripple-host" onclick="closeSignup()" onmousedown="createRipple(event,this)">Empezar a explorar →</button>
       </div>
 
@@ -1391,8 +1393,8 @@ body{background:var(--black);color:var(--ivory);font-family:'Inter',sans-serif;o
 <!-- FLOATING SIGNUP TRIGGER -->
 <button class="signup-trigger ripple-host" id="signupTrigger" onclick="openSignup()" onmousedown="createRipple(event,this)">
   <span class="trigger-icon">🎁</span>
-  <span class="trigger-pct">10%</span>
-  <span>OFF · Regístrate</span>
+  <span class="trigger-icon">✦</span>
+  <span>Únete a la comunidad</span>
 </button>
 
 <div id="cartToast">✦ Añadido al carrito</div>
