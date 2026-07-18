@@ -1752,7 +1752,7 @@ function renderSecondHand() {
 // SIGNUP MODAL
 // ══════════════════════════════════════════
 
-const SHEET_URL = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec';
+const SHEET_URL = 'https://formspree.io/f/xeeyabpy';
 let signupDone = false;
 
 function openSignup() {
@@ -1791,10 +1791,21 @@ function submitSignup() {
   btn.classList.add('loading');
 
   fetch(SHEET_URL, {
-    method: 'POST', mode: 'no-cors',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ timestamp: new Date().toISOString(), nombre: name, apellido: lastname, email, whatsapp: phone, ciudad: city, promo: promo?'Sí':'No', drops: drops?'Sí':'No', eventos: events?'Sí':'No', cupon: 'RETRO10', origen: 'Web Inauguración' }),
-  }).then(() => showSignupSuccess()).catch(() => showSignupSuccess());
+    method: 'POST',
+    headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      nombre:    name,
+      apellido:  lastname,
+      email:     email,
+      whatsapp:  phone,
+      ciudad:    city,
+      promo:     promo ? 'Sí' : 'No',
+      drops:     drops ? 'Sí' : 'No',
+      eventos:   events ? 'Sí' : 'No',
+      origen:    'Web RETROGOTA',
+      _subject:  '🛍️ Nuevo suscriptor RETROGOTA — ' + name + ' ' + lastname,
+    }),
+  }).then(res => showSignupSuccess()).catch(() => showSignupSuccess());
 }
 
 function showSignupSuccess() {
